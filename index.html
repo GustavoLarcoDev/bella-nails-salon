@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella Nails - Salón de Belleza</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+</head>
+<body>
+    <nav>
+        <div class="logo">Bella Nails</div>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#cita">Reservar Cita</a></li>
+        </ul>
+    </nav>
+
+    <header id="inicio">
+        <div class="hero">
+            <h1>Bella Nails</h1>
+            <p>Tu belleza en nuestras manos</p>
+            <a href="#cita" class="btn">Agenda tu cita</a>
+        </div>
+    </header>
+
+    <section id="servicios" class="services">
+        <h2>Nuestros Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="images/manicure.jpg" alt="Manicure">
+                <h3>Manicure</h3>
+                <p>Clásico • Gel • Acrílico</p>
+                <span class="price">Desde $300</span>
+            </div>
+            <div class="service-card">
+                <img src="images/pedicure.jpg" alt="Pedicure">
+                <h3>Pedicure</h3>
+                <p>Spa • Gel • Diseños</p>
+                <span class="price">Desde $400</span>
+            </div>
+            <div class="service-card">
+                <img src="images/nail-art.jpg" alt="Nail Art">
+                <h3>Nail Art</h3>
+                <p>Diseños • Pedrería • 3D</p>
+                <span class="price">Desde $150</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="section">
+        <div class="container">
+            <h2>Nuestros Trabajos</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/gallery1.jpg" alt="Diseño de uñas 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery2.jpg" alt="Diseño de uñas 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery3.jpg" alt="Diseño de uñas 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery4.jpg" alt="Diseño de uñas 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery5.jpg" alt="Diseño de uñas 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery6.jpg" alt="Diseño de uñas 6">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery7.jpg" alt="Diseño de uñas 7">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery8.jpg" alt="Diseño de uñas 8">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery9.jpg" alt="Diseño de uñas 9">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery10.jpg" alt="Diseño de uñas 10">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery11.jpg" alt="Diseño de uñas 11">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery12.jpg" alt="Diseño de uñas 12">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cita" class="appointment">
+        <h2>Reserva tu Cita</h2>
+        <form>
+            <input type="text" placeholder="Nombre completo" required>
+            <input type="tel" placeholder="Teléfono" required>
+            <input type="email" placeholder="Email" required>
+            <select required>
+                <option value="">Selecciona el servicio</option>
+                <option>Manicure Clásico</option>
+                <option>Manicure Gel</option>
+                <option>Pedicure Spa</option>
+                <option>Nail Art</option>
+            </select>
+            <input type="date" required>
+            <input type="time" required>
+            <button type="submit" class="btn">Agendar Cita</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact">
+                <h3>Contáctanos</h3>
+                <p> Plaza Principal 456, Ciudad</p>
+                <p> +123 456 7890</p>
+                <p> citas@bellanails.com</p>
+            </div>
+            <div class="hours">
+                <h3>Horario</h3>
+                <p>Lunes - Sábado: 10:00 - 20:00</p>
+                <p>Domingo: 11:00 - 18:00</p>
+            </div>
+            <div class="social">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">Pinterest</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.gallery-slider', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                }
+            }
+        });
+    </script>
+</body>
+</html>
