@@ -173,12 +173,35 @@
         input.removeAttribute("aria-invalid");
         errorOf(input).hidden = true;
     }
+    // Horario: lun–sáb 10:00–20:00, dom 11:00–18:00; no se aceptan horas ya pasadas hoy
+    var timeInput = $("#f-hora");
+    function isValidTime(t) {
+        if (!/^\d{2}:\d{2}/.test(t)) return false;
+        var mins = +t.slice(0, 2) * 60 + +t.slice(3, 5);
+        var f = date.value;
+        var open = 10 * 60, close = 20 * 60;
+        if (f) {
+            var p = f.split("-");
+            if (new Date(+p[0], +p[1] - 1, +p[2]).getDay() === 0) { open = 11 * 60; close = 18 * 60; }
+        }
+        if (mins < open || mins > close) return false;
+        if (f === today) {
+            var n = new Date();
+            if (mins <= n.getHours() * 60 + n.getMinutes()) return false;
+        }
+        return true;
+    }
+    date.addEventListener("change", function () {
+        if (timeInput.value && isValidTime(timeInput.value)) clearError(timeInput);
+    });
+
     function isValid(input) {
         var v = input.value.trim();
         if (!v) return false;
         if (input.name === "email") return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
         if (input.name === "telefono") return v.replace(/\D/g, "").length >= 7;
         if (input.name === "fecha") return v >= today;
+        if (input.name === "hora") return isValidTime(v);
         return true;
     }
 

@@ -398,14 +398,13 @@ h3 { font-size: 1.75rem; }
 .hero-media::after {
     content: "";
     position: absolute;
-    width: 120px; height: 120px;
-    left: -44px; bottom: 44px;
+    width: 92px; height: 92px;
+    left: -58px; bottom: 84px;
     border-radius: 50%;
-    background: radial-gradient(circle at 35% 35%, var(--rose-soft), var(--rose) 75%);
-    opacity: .9;
-    z-index: 2;
-    filter: saturate(.9);
-    box-shadow: 0 20px 40px -18px rgba(184, 51, 106, .6);
+    background: radial-gradient(circle at 38% 34%, #fff 0, var(--rose-soft) 38%, rgba(242, 184, 198, .35) 100%);
+    opacity: .85;
+    z-index: 0;
+    pointer-events: none;
 }
 .hero-media picture {
     position: relative;
@@ -431,7 +430,7 @@ h3 { font-size: 1.75rem; }
     }
     .hero-copy { order: 1; }
     .hero-media { order: 2; width: min(100%, 380px); }
-    .hero-media::after { width: 84px; height: 84px; left: -18px; bottom: 30px; }
+    .hero-media::after { width: 64px; height: 64px; left: -8px; bottom: 30px; z-index: 2; }
 }
 @media (max-width: 480px) {
     .hero-actions .btn { flex: 1 1 0; padding-inline: 1rem; white-space: nowrap; }
@@ -441,6 +440,7 @@ h3 { font-size: 1.75rem; }
     .hero-media picture { aspect-ratio: 1 / 1.08; }
     .hero-media img { object-position: 50% 62%; }
     .hero-media::before { inset: 14px -14px -14px 14px; }
+    .hero-media::after { display: none; }
 }
 
 /* ----- Sections ----- */
@@ -555,15 +555,15 @@ h3 { font-size: 1.75rem; }
     grid-template-areas:
         "a a b"
         "a a b"
-        "c c d"
-        "e f d"
-        "e f g"
-        "h i g";
+        "c d e"
+        "c d e"
+        "g f f"
+        "g f f";
     gap: 12px;
 }
 .g-a { grid-area: a; } .g-b { grid-area: b; } .g-c { grid-area: c; }
 .g-d { grid-area: d; } .g-e { grid-area: e; } .g-f { grid-area: f; }
-.g-g { grid-area: g; } .g-h { grid-area: h; } .g-i { grid-area: i; }
+.g-g { grid-area: g; }
 
 .gallery-item {
     position: relative;
@@ -579,8 +579,8 @@ h3 { font-size: 1.75rem; }
     object-fit: cover;
     transition: transform .8s var(--ease), filter .4s;
 }
-.g-i .gallery-item img { object-position: 50% 70%; }
-.g-h .gallery-item img { object-position: 50% 60%; }
+.g-g .gallery-item img { object-position: 50% 70%; }
+.g-f .gallery-item img { object-position: 50% 60%; }
 .gallery-item::after {
     content: "";
     position: absolute;
